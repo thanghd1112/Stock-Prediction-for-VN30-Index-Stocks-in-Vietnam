@@ -1,4 +1,5 @@
 # Stock-Prediction-for-VN30-Index-Stocks-in-Vietnam
+## Introduction_Giới thiệu
 This project develops statistical models on VNINDEX stock time series data to forecast price trends. By applying data preprocessing, parameter optimization, and model training, it utilizes methods such as ARIMA, VAR, Holt-Winters, and Facebook Prophet, showcasing their effectiveness in time series prediction.
 
 ## Dưới đây là mô tả các bước trong dự án **dự đoán Xu hướng chứng khoán**, bắt đầu từ bước: 
@@ -38,9 +39,7 @@ This project develops statistical models on VNINDEX stock time series data to fo
    - **Data Normalization_Chuẩn hóa dữ liệu**: Đảm bảo rằng tất cả các đặc trưng (features) trong dữ liệu có định dạng và đơn vị giống nhau để dễ dàng xử lý.
 
 #### 1.4. **Data Preprocessing_Tiền xử lý dữ liệu**
-   - **Chuyển đổi dữ liệu thành dạng thích hợp**: Chuyển dữ liệu thô thành các định dạng có thể sử dụng và bảo quản dễ dàng dưới dạng ```markdown
-   .csv
-   ```. Và một vài chỉnh sửa để phù hợp đầu vào của từng mô hình
+   - **Chuyển đổi dữ liệu thành dạng thích hợp**: Chuyển dữ liệu thô thành các định dạng có thể sử dụng và bảo quản dễ dàng dưới dạng csv. Và một vài chỉnh sửa để phù hợp đầu vào của từng mô hình
    - **Data Splitting_Phân chia dữ liệu**: Chia dữ liệu thành các tập huấn luyện và tập kiểm tra (train/test) để sử dụng trong việc xây dựng và đánh giá mô hình.
 ##### Lưu ý: Đây là dữ liệu time series và thu thập 30 mã nối tiếp nhau trong bộ dữ liệu, việc chia dữ liệu train/test theo cách ngẫu nhiên làm mất giá trị liền mạch chuỗi hay tránh việc chỉ huấn luyện mấy chục mã đầu nhưng lại đem 1 vài mã ở phía cuối dữ liệu ra thử nghiệm.
 Tham khảo theo cách lấy và chia dữ liệu thủ công của tôi 
@@ -77,3 +76,37 @@ for ticker in vn30_tickers:
 
 ### 4. **Evaluate models and visualize trends based on the test set (Đánh giá mô hình và trực quan hóa xu hướng giá dựa trên tập test)**  
 - Đánh giá độ chính xác mô hình bằng các chỉ số MAE và RMSE, trực quan hóa kết quả dự báo với đồ thị.
+### Research Results
+Sau đây là bảng: So sánh kết quả thang đo đánh giá trung bình giữa các mô hình
+
+| Model                                    | MAE       | RMSE      |
+|------------------------------------------|-----------|-----------|
+| ARIMA                                    | 42,557.95 | 42,486.06 |
+| VAR                                      | 4,400.07  | 3,817.61  |
+| Additive Holt-Winters                    | 3,533.63  | 4,077.04  |
+| Multiplicative Holt-Winters              | 3,557.57  | 4,091.04  |
+| Additive Seasonality Facebook Prophet    | 3,358.70  | 4,003.01  |
+| Multiplicative Seasonality Facebook Prophet | 3,887.96  | 4,605.60  |
+
+# Summary
+## Conclusion
+
+Building and applying time series prediction models on stock market data brings significant insights and benefits to the financial and economic sectors. By constructing models to predict stock price trends, newcomers to the field can make more informed investment choices, while economic experts can use these models to identify key factors influencing the market. With the assistance of prediction models, experts can detect and issue warnings about factors that impact the economy.
+
+The use of ARIMA, VAR, Holt-Winters, and Facebook Prophet models, trained on stock data, highlights the importance of selecting models tailored to the characteristics of each stock dataset, thereby enhancing the accuracy of predictions. The results of this study indicate that Facebook Prophet is the most optimal model for making predictions.
+
+However, the study still faces several limitations:
+- Large and voluminous data, which can affect the model's output.
+- Numerous issues in data collection, model construction, and optimization.
+- Resource-intensive models such as Holt-Winters.
+- Lack of an application to deploy the prediction models.
+
+## Future Directions
+
+- Continue research and delve deeper into prediction models.
+- Improve and adjust model parameters to enhance prediction performance.
+- Develop websites or applications to deploy prediction models with continuously updated data from stock exchanges.
+- Expand research into other prediction fields, such as weather forecasting and healthcare.
+- Investigate additional prediction models and combine them with the current models.
+
+![Proof that the article was completed in Vietnam](BaiBao.png)
